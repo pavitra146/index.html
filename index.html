@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Person 💕</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9ecf, #ffd6ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Floating Hearts */
+.bg-heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 10s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-10vh); }
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.6s ease;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slide { display: none; }
+.active { display: block; }
+
+h1, h2 {
+    color: #ff4da6;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+button {
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes {
+    background: linear-gradient(45deg, #ff66b2, #ff3385);
+    color: white;
+}
+
+.no {
+    background: #ffe6f2;
+    color: #ff3385;
+    border: 2px solid #ff66b2;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+img {
+    width: 200px;
+    border-radius: 20px;
+    padding: 8px;
+    background: linear-gradient(45deg, #ff66b2, #ff99cc, #ff3385);
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.className = "bg-heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    document.body.appendChild(heart);
+}
+
+function next(id) {
+    document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
+    document.getElementById("slide" + id).classList.add("active");
+}
+</script>
+
+<div class="container">
+
+<!-- Slide 1 -->
+<div id="slide1" class="slide active">
+    <h1>ABHYAAA TUJHE MERESE BAAT KARNA HAI YAA NAHI ? 🥺</h1>
+    <button class="yes" onclick="next(2)">Yes 💕</button>
+    <button class="no" onclick="next(3)">No 😒</button>
+</div>
+
+<!-- YES Path -->
+<div id="slide2" class="slide">
+    <h1>GUD BOIII 🥰💖</h1>
+    <img src="C:\Users\pavit\Downloads\WhatsApp Image 2026-02-11 at 21.12.36.jpeg">
+</div>
+
+<!-- NO Path -->
+<div id="slide3" class="slide">
+    <h2>
+        IGNORE KYU KARTA HAI MUJHE? 😤<br><br>
+        ITNA NAFRAT KARTA HAI KYA MERESE?<br><br>
+        MERA BACHHA HAI TU KARKE BOLTA HAI AUR<br>
+        MERESE ITNA PARESHAAN HOGAYA HAI KYA?
+    </h2>
+    <button class="yes" onclick="next(4)">Yes 😬</button>
+    <button class="no" onclick="next(5)">No 😳</button>
+</div>
+
+<div id="slide4" class="slide">
+    <h2>AUR JYADA PARESHAAN KARUNGI 😈 ROK KE DIKHA 💗</h2>
+    <img src="C:\Users\pavit\Downloads\WhatsApp Image 2026-02-11 at 21.33.49.jpeg">
+</div>
+
+<div id="slide5" class="slide">
+    <h2>
+        AGAR NAFRAT NAHI KARTA HAI TOH ITNA KYU PARESHAAN KARTA HAI MUJHE? 🥺<br><br>
+        MAI TOH ITNA PYAAR KARTI HU TERESE 💕
+    </h2>
+</div>
+
+</div>
+
+</body>
+</html>
